@@ -34,16 +34,26 @@ require("lazy").setup({
 	checker = { enabled = true },
 })
 
-local custom_theme = require("lualine.themes.ayu_mirage")
-
 vim.cmd([[colorscheme tokyonight-night]])
 
 require("catppuccin").setup({
 	flavour = "macchiato",
 })
 
+local custom_theme = require("lualine.themes.iceberg_dark")
+
 require("lualine").setup({
-	options = { theme = custom_theme },
+	options = {
+		theme = custom_theme,
+	},
+	sections = {
+		lualine_a = { "mode" },
+		lualine_b = { "branch", "diff", "diagnostics" },
+		lualine_c = { "filename" },
+		lualine_x = { "encoding", "fileformat", "filetype" },
+		lualine_y = { "progress" },
+		lualine_z = { "location" },
+	},
 })
 
 require("mason").setup()
