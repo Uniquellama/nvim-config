@@ -32,6 +32,7 @@ return {
 	{"<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
 	{"<leader>fc", "<cmd>Telescope colorscheme<cr>", desc = "Open colour picker"},
 	{"<leader>c", "<cmd>Telescope commands<cr>", desc = "Open command list"},
+	{"<leader>b", "<cmd>Telescope buffers<cr>", desc = "Select buffer"},
         {"<leader>fp",
         function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
         desc = "Find Plugin File",i
